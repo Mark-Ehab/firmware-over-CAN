@@ -1,12 +1,10 @@
-/******************************************************
- * \author: Youssef Khaled Ahmed (558)
- *          Mark Ehab Tawfik (201)
- *          Hazem Mohamed Ezzeldin (1297)
- *          Azza Saeed Mohammed Gad (912)
- *          MennaTullah Ahmed Farrag Hefny (116)
- * \date: 25/9/2023
- * \brief: private header file of the SCB
- ******************************************************/
+/****************************************************************/
+/* 					Author   	 : Mark Ehab                    */
+/* 					Date     	 : Sep 25, 2023               	*/
+/*      			SWC          : SCB  			            */
+/*     			    Description	 : SCB Private                  */
+/* 	   				Version      : V1.0                         */
+/****************************************************************/
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*                                                                                                          */
@@ -65,5 +63,11 @@ typedef struct
 
 /* Define Interrupt Priority Group Mask */
 #define SCB_INTERRUPT_PRIGROUP_MASK		 0xFFFFF8FFU
+
+/* Define Register Key for Application Interrupt and Reset Control Register */
+#define SCB_VECTKEY						 0x05FA0000U
+
+/* Define Register Key Mask for Application Interrupt and Reset Control Register */
+#define SCB_VECTKEY_MASK				 0x0000FFFFU
 
 #endif /* SCB_MCAL_PRIVATE_H_ */

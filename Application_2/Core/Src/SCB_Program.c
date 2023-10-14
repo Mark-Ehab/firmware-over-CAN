@@ -1,12 +1,10 @@
-/******************************************************
- * \author: Youssef Khaled Ahmed (558)
- *          Mark Ehab Tawfik (201)
- *          Hazem Mohamed Ezzeldin (1297)
- *          Azza Saeed Mohammed Gad (912)
- *          MennaTullah Ahmed Farrag Hefny (116)
- * \date: 25/9/2023
- * \brief: source file of the SCB
- ******************************************************/
+/****************************************************************/
+/* 					Author   	 : Mark Ehab                    */
+/* 					Date     	 : Sep 25, 2023               	*/
+/*      			SWC          : SCB  			            */
+/*     			    Description	 : SCB Program                  */
+/* 	   				Version      : V1.0                         */
+/****************************************************************/
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*                                                                                                          */
@@ -25,12 +23,13 @@
 /*                                    LIBRARIES		  		                         */
 /*                                                                                   */
 /*-----------------------------------------------------------------------------------*/
-#include "../Inc/standardTypes.h"
-#include "../Inc/common_macros.h"
+#include "standardTypes.h"
+#include "common_macros.h"
 
-#include "../Inc/SCB_Private.h"
-#include "../Inc/SCB_Config.h"
-#include "../Inc/SCB_Interface.h"
+
+#include "SCB_Private.h"
+#include "SCB_Config.h"
+#include "SCB_Interface.h"
 
 /*-----------------------------------------------------------------------------------*/
 /*                                                                                   */
@@ -59,19 +58,30 @@ ERROR_STATUS_t SCB_SetInterruptPriorityGroup(uint8_t Copy_InterruptProirityGroup
 {
 	/* Local Variables Definitions */
 	uint8_t Local_Status = RT_OK;
+	uint32_t Local_AIRCR_RegisterClone;			/* Variable to hold clone value of AIRCR register*/
 
 	/* Check if passed interrupt priority group is valid or not */
-	if(Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G0S16 ||
-	   Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G2S8  ||
-	   Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G4S4  ||
-	   Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G8S2  ||
+	if(Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G0S16 || Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G2S8  ||
+	   Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G4S4  || Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G8S2  ||
 	   Copy_InterruptProirityGroup == SCB_INT_PRIGROUP_G16S0)
 	{
-		/* Clear PRIGROUP Bits in AIRCR Register */
-		SCB->AIRCR &= SCB_INTERRUPT_PRIGROUP_MASK;
+		/* Assign AIRCR register current value to Local_AIRCR_RegisterClone variable */
+		Local_AIRCR_RegisterClone = SCB->AIRCR;
 
-		/* Set Priority Grouping in  AIRCR Register*/
-		SCB->AIRCR |= (Copy_InterruptProirityGroup << 8);
+		/* Mask bits [16:31] of AIRCR Register Key in Local_AIRCR_RegisterClone variable */
+		Local_AIRCR_RegisterClone &= SCB_VECTKEY_MASK;
+
+		/* Write AIRCR Register Key in Local_AIRCR_RegisterClone variable in bits [16:31] to be able to write on register */
+		Local_AIRCR_RegisterClone |= SCB_VECTKEY;
+
+		/* Clear PRIGROUP Bits in Local_AIRCR_RegisterClone variable */
+		Local_AIRCR_RegisterClone &= SCB_INTERRUPT_PRIGROUP_MASK;
+
+		/* Set Priority Grouping in Local_AIRCR_RegisterClone variable */
+		Local_AIRCR_RegisterClone |= (Copy_InterruptProirityGroup << 8);
+
+		/* Assign the last value of Local_AIRCR_RegisterClone variable after modification to AIRCR register */
+		SCB->AIRCR = Local_AIRCR_RegisterClone;
 	}
 	else
 	{
@@ -138,6 +148,21 @@ ERROR_STATUS_t SCB_ShiftInterruptVectorTable(uint32_t Copy_VectorTableOffset)
 /*--------------------------------------------------------------------------------*/
 void SCB_PerformSoftReset(void)
 {
-	/* Perform soft reset through setting SYSRESETREQ in AIRCR Register */
-	SET_BIT(SCB->AIRCR,AIRCR_SYSRESETREQ);
+	/* Local Variables Definitions */
+	uint32_t Local_AIRCR_RegisterClone;			/* Variable to hold clone value of AIRCR register*/
+
+	/* Assign AIRCR register current value to Local_AIRCR_RegisterClone variable */
+	Local_AIRCR_RegisterClone = SCB->AIRCR;
+
+	/* Mask bits [16:31] of AIRCR Register Key in Local_AIRCR_RegisterClone variable */
+	Local_AIRCR_RegisterClone &= SCB_VECTKEY_MASK;
+
+	/* Write AIRCR Register Key in Local_AIRCR_RegisterClone variable in bits [16:31] to be able to write on register */
+	Local_AIRCR_RegisterClone |= SCB_VECTKEY;
+
+	/* Perform soft reset through setting SYSRESETREQ bit (Bit 2) in Local_AIRCR_RegisterClone variable */
+	SET_BIT(Local_AIRCR_RegisterClone,AIRCR_SYSRESETREQ);
+
+	/* Assign the last value of Local_AIRCR_RegisterClone variable after modification to AIRCR register */
+	SCB->AIRCR = Local_AIRCR_RegisterClone;
 }

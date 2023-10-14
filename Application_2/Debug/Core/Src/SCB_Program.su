@@ -1,3 +1,3 @@
-SCB_Program.c:58:16:SCB_SetInterruptPriorityGroup	24	static
-SCB_Program.c:106:16:SCB_ShiftInterruptVectorTable	24	static
-SCB_Program.c:139:6:SCB_PerformSoftReset	4	static
+SCB_Program.c:57:16:SCB_SetInterruptPriorityGroup	24	static
+SCB_Program.c:116:16:SCB_ShiftInterruptVectorTable	24	static
+SCB_Program.c:149:6:SCB_PerformSoftReset	16	static

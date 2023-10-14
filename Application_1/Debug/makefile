@@ -49,8 +49,8 @@ Application_1.bin \
 all: Application_1.elf secondary-outputs
 
 # Tool invocations
-Application_1.elf: $(OBJS) $(USER_OBJS) D:\Eme\ARM\projects\drivers_withConfig\Application_1\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "Application_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Eme\ARM\projects\drivers_withConfig\Application_1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Application_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Application_1.elf: $(OBJS) $(USER_OBJS) E:\EUI\Projects\firmware-over-CAN\Application_1\STM32F103C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "Application_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\EUI\Projects\firmware-over-CAN\Application_1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Application_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

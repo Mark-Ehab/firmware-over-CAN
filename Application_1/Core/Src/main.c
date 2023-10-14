@@ -138,7 +138,8 @@ int main(void)
 			/* if the CAN flag is raised */
 			if(Flag_CAN)
 			{
-				if(Flag_once){
+				if(Flag_once)
+				{
 					Flag_once = 0;
 					/* clear the LCD */
 					CLCD_ClearDisplay();
@@ -149,7 +150,8 @@ int main(void)
 					/* write the string on the LCD */
 					CLCD_WriteString("press the button");
 				}
-				if(FLAG_buttonPressed){
+				if(FLAG_buttonPressed)
+				{
 					HAL_Delay(100);
 					JumpToBootLoader();
 				}
@@ -298,15 +300,16 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-void JumpToBootLoader(void){
-	/* shift the vector table to that of APP_1 */
-	SCB_ShiftInterruptVectorTable(0x08000000);
-	/* assign the address to call variable to the address of APP_1 */
-	addr_to_call = *(fun_ptr*)(0x08000004);
+void JumpToBootLoader(void)
+{
 	/* deinitializing the HAL */
 	HAL_DeInit();
-	/* jump to APP_1 by calling this pointer */
-	addr_to_call();
+
+	/* shift the vector table to that of Bootloader */
+	SCB_ShiftInterruptVectorTable(0x08000000);
+
+	/* Apply soft reset */
+	SCB_PerformSoftReset();
 }
 
 /***************************************************************
@@ -346,7 +349,8 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
  *
  * description: External callback function
  ***************************************************************/
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pins){
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pins)
+{
 	/* raise the switch flag */
 	FLAG_buttonPressed = 1;
 }
