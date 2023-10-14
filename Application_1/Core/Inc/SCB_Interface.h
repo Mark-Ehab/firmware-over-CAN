@@ -66,7 +66,11 @@ ERROR_STATUS_t SCB_SetInterruptPriorityGroup(uint8_t Copy_InterruptProirityGroup
 /* @Param(in)	 : uint32_t Copy_VectorTableOffset				                  */
 /*				   Brief: The offset required to shift the interrupt vector table */
 /*				          from interrupt vector table base (0x00000000)			  */
-/*				   Range: -														  */
+/*				   Range: (0x00000000 --> 0x3FFFFE00)							  */
+/*				   Note : Vector table offset must be aligned to the number of    */
+/*						  exception entries in the vector table. The minimum      */
+/*						  alignment is 128 words. Table alignment requirements    */
+/*						  mean that bits[8:0] of the table offset are always zero.*/
 /*--------------------------------------------------------------------------------*/
 /* @Param(inout) : None                                                	          */
 /*--------------------------------------------------------------------------------*/
@@ -74,8 +78,10 @@ ERROR_STATUS_t SCB_SetInterruptPriorityGroup(uint8_t Copy_InterruptProirityGroup
 /*--------------------------------------------------------------------------------*/
 /* @Return		 : ERROR_STATUS_t                                     			  */
 /*--------------------------------------------------------------------------------*/
-/* @Description	 : This function is intended to force a large system software	  */
-/* 				   reset of all major components								  */
+/* @Description	 : This function is intended to shift static interrupt vector  	  */
+/*                 table by hardware based on passed offset to desired place in   */
+/*                 flash memory in which interrupt vector table must be aligned   */
+/*                 in at least 128 words		 								  */
 /*--------------------------------------------------------------------------------*/
 ERROR_STATUS_t SCB_ShiftInterruptVectorTable(uint32_t Copy_VectorTableOffset);
 

@@ -23,9 +23,9 @@
 /*                                    LIBRARIES		  		                         */
 /*                                                                                   */
 /*-----------------------------------------------------------------------------------*/
-#include "standardTypes.h"
-#include "common_macros.h"
-
+#include "STD_TYPES.h"
+#include "STD_ERRORS.h"
+#include "BIT_MATH.h"
 
 #include "SCB_Private.h"
 #include "SCB_Config.h"
@@ -110,8 +110,10 @@ ERROR_STATUS_t SCB_SetInterruptPriorityGroup(uint8_t Copy_InterruptProirityGroup
 /*--------------------------------------------------------------------------------*/
 /* @Return		 : ERROR_STATUS_t                                     			  */
 /*--------------------------------------------------------------------------------*/
-/* @Description	 : This function is intended to force a large system software	  */
-/* 				   reset of all major components								  */
+/* @Description	 : This function is intended to shift static interrupt vector  	  */
+/*                 table by hardware based on passed offset to desired place in   */
+/*                 flash memory in which interrupt vector table must be aligned   */
+/*                 in at least 128 words		 								  */
 /*--------------------------------------------------------------------------------*/
 ERROR_STATUS_t SCB_ShiftInterruptVectorTable(uint32_t Copy_VectorTableOffset)
 {
