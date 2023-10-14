@@ -23,9 +23,8 @@
 /*                                    LIBRARIES		  		                         */
 /*                                                                                   */
 /*-----------------------------------------------------------------------------------*/
-#include "STD_TYPES.h"
-#include "STD_ERRORS.h"
-#include "BIT_MATH.h"
+#include "standardTypes.h"
+#include "common_macros.h"
 
 #include "SCB_Private.h"
 #include "SCB_Config.h"
