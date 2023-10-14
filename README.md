@@ -1,3 +1,3 @@
 # firmware-over-CAN
 
-![The Mona Lisa](https://drive.google.com/file/d/1H-q4fU81jsLiYfJE4bsH8E4kfEQrlsRT/view?usp=sharing)
+![MainECU](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/3ef4611f-022a-435a-98aa-9b526950fc1d)
