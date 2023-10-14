@@ -1,0 +1,8 @@
+parse.c:43:9:ASCII_TO_HEX	24	static
+parse.c:89:6:parseAddressUpperPart	24	static
+parse.c:142:6:parseData	224	static
+parse.c:228:6:Parser_parseRecord	24	static
+parse.c:331:6:Parser_GetAppId	24	static
+parse.c:366:6:Parser_SetAppId	24	static
+parse.c:398:9:Parser_isAppAvailable	24	static
+parse.c:434:6:Parser_ToggleAppId	16	static

@@ -1,0 +1,7 @@
+FPEC_Program.c:57:16:FPEC_FlashPageErase	24	static
+FPEC_Program.c:122:16:FPEC_EraseBankArea	24	static
+FPEC_Program.c:173:16:FPEC_FlashWriteHexRecord	32	static
+FPEC_Program.c:248:16:FPEC_WriteDataOptionByte	24	static
+FPEC_Program.c:343:16:FPEC_GetDataOptionByte	24	static
+FPEC_Program.c:402:6:FPEC_FlashMassErase	4	static
+FPEC_Program.c:444:16:FPEC_erasePagesFromTo	24	static
