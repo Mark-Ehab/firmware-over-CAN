@@ -1,3 +1,0 @@
-FPEC_program.c:10:6:FPEC_voidEraseAppArea	16	static
-FPEC_program.c:20:6:FPEC_voidFlashPageErase	16	static
-FPEC_program.c:49:6:FPEC_voidFlashWrite	32	static
