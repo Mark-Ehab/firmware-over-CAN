@@ -2,7 +2,8 @@
 1. [MainECU](#mainECU)
 2. [GatewayECU](#gatewayECU)
 
-## <a name="mainECU">MainECU</a>:
+## <a name="mainECU">**MainECU**</a>:
+### FlowChart:
 ![MainECU](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/b25c8e78-6d74-411f-ba11-43cd246e667e)
 
-## <a name="gatewayECU">GatewayECU</a>:
+## <a name="gatewayECU">**GatewayECU**</a>:
