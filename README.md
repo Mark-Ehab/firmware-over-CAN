@@ -1,4 +1,4 @@
-# firmware-over-CAN
+# EME-EUI-SEITech Solutions-firmware-over-CAN
 1. [TeamMembers](#teamMemebers)
 2. [Project_overView](#projectOverView)
 3. [MainECU](#mainECU)
@@ -26,8 +26,9 @@ the bootloader design is simple as shown in the flowchart where there is a SysTi
 we have two main scenarios:
 first: there is an application to be flashed.
 second: there isn't any application.
-the bootloader handles the first scenario by first flashing the update in the corresponding bank by checking on the address upper part. and after flashing it checks on the AppSwitch button if pressed or not then it checks on the **option byte DATA0** that holds the following.
-![option byte DATA0](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/138eaef6-0923-4f4c-b337-f776b70dc6ef)
+the bootloader handles the first scenario by first flashing the update in the corresponding bank by checking on the address upper part. and after flashing it checks on the AppSwitch button if pressed or not then it checks on the **option byte DATA0** that holds the following:
+![option byte DATA0](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/4500c2b1-9825-4f41-8e78-1a9d81f6f869)
+
 according to the drawing above if the current app ID that is completely flashed is APP_2 and the **AppSwitch button** is **pressed** then jump to **APP_1** and if the button **isn't pressed** then jump to **APP_2** and vice versa.
 but, ***one important note*** any jump the bootloader will make sure that the application already exists in the memory and exists correctly otherwise it **won't jump** this is done by checking on the flags that are in the option byte DATA0.
 
