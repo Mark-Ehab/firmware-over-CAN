@@ -14,7 +14,8 @@
 
 ## <a name="project_over_view">**Project_overView**</a>:
 ### Sequence diagram:
-![whole_program_SequenceDiagram](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/f3b9865f-85ea-4e8a-968f-2e90c0ec4888)
+![whole_program_SequenceDiagram](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/3b4fe281-bbbe-418d-aaae-83006fb61f52)
+
 
 ### Description:
 The PC sends the first record when there is an update to the gateway ECU through **UART**, then the gateway ECU saves the first record and sends a message to the main ECU through **CAN** to notify it about the update when the application that is running on the main ECU is available for update it returns to the bootloader that sends an ACK to the gateway ECU which indicates the availability of the main ECU to receive the update. \
