@@ -1,4 +1,4 @@
-# EME-EUI-SEITech Solutions-firmware-update-over-CAN-with-Gateway-ECU
+# EME-EUI-SEITech Solutions-firmware-update-over-CAN-with-Gateway-ECU-STM32F103C8T6
 1. [TeamMembers](#team_memebers)
 2. [Project_overView](#project_over_view)
 3. [MainECU](#mainECU)
