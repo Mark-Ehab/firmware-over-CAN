@@ -4,7 +4,7 @@
 3. [MainECU](#mainECU)
 4. [GatewayECU](#gatewayECU)
 
-## <a name="teamMemebers">**TeamMembers**</a>:
+## <a name="teamMemebers">TeamMembers</a>:
 1. Youssef Khaled Ahmed (558)
 2. Mark Ehab Tawfik (201)
 3. Hazem Mohamed Ezzeldin (1297)
