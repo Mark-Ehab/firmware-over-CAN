@@ -27,6 +27,7 @@ we have two main scenarios:
 first: there is an application to be flashed.
 second: there isn't any application.
 the bootloader handles the first scenario by first flashing the update in the corresponding bank by checking on the address upper part. and after flashing it checks on the AppSwitch button if pressed or not then it checks on the **option byte DATA0** that holds the following:
+
 ![option byte DATA0](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/4500c2b1-9825-4f41-8e78-1a9d81f6f869)
 
 according to the drawing above if the current app ID that is completely flashed is APP_2 and the **AppSwitch button** is **pressed** then jump to **APP_1** and if the button **isn't pressed** then jump to **APP_2** and vice versa.
