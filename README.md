@@ -14,6 +14,8 @@
 
 ## <a name="project_over_view">**Project_overView**</a>:
 ### Sequence diagram:
+![whole_program_SequenceDiagram](https://github.com/YoussefKhaledAhmed/firmware-over-CAN/assets/101673979/f3b9865f-85ea-4e8a-968f-2e90c0ec4888)
+
 
 ## <a name="mainECU">**MainECU**</a>:
 ### FlowChart:
