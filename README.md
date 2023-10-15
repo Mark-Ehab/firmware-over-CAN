@@ -12,7 +12,7 @@
 5. MennaTullah Ahmed Farrag Hefny (116)
 
 ## <a name="project_over_view">**Project_overView**</a>:
-### FlowChart:
+### Sequence diagram:
 
 ## <a name="mainECU">**MainECU**</a>:
 ### FlowChart:
