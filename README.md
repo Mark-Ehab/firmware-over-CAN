@@ -1,4 +1,4 @@
-# EME-EUI-SEITech Solutions-firmware-over-CAN
+# EME-EUI-SEITech Solutions-firmware-update-over-CAN-with-Gateway-ECU
 1. [TeamMembers](#team_memebers)
 2. [Project_overView](#project_over_view)
 3. [MainECU](#mainECU)
