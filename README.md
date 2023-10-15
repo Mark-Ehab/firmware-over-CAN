@@ -3,6 +3,7 @@
 2. [Project_overView](#project_over_view)
 3. [MainECU](#mainECU)
 4. [GatewayECU](#gatewayECU)
+5. [Video_link](#video_link)
 
 ## <a name="team_memebers">**TeamMembers**</a>:
 1. Youssef Khaled Ahmed (558)
@@ -38,3 +39,7 @@ the bootloader handles the second scenario by checking on the current ID and if 
 ## <a name="gatewayECU">**GatewayECU**</a>:
 ### Description:
 this ECU just takes the hex file as records from the server, **PC** in our case, through **USART** then forwards the received record to the main ECU through **CAN**.
+
+
+## <a name="video_link">**Video_link**</a>:
+[Video link](https://youtu.be/GRoJVQK0cgg?si=4eCEZmQRkep7GVR4)
