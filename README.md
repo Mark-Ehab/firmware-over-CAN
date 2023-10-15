@@ -1,17 +1,17 @@
 # EME-EUI-SEITech Solutions-firmware-over-CAN
-1. [TeamMembers](#teamMemebers)
-2. [Project_overView](#projectOverView)
+1. [TeamMembers](#team_memebers)
+2. [Project_overView](#project_over_view)
 3. [MainECU](#mainECU)
 4. [GatewayECU](#gatewayECU)
 
-## <a name="teamMemebers">**TeamMembers**</a>:
+## <a name="team_memebers">**TeamMembers**</a>:
 1. Youssef Khaled Ahmed (558)
 2. Mark Ehab Tawfik (201)
 3. Hazem Mohamed Ezzeldin (1297)
 4. Azza Saeed Mohammed Gad (912)
 5. MennaTullah Ahmed Farrag Hefny (116)
 
-## <a name="projectOverView">**Project_overView**</a>:
+## <a name="project_over_view">**Project_overView**</a>:
 ### FlowChart:
 
 ## <a name="mainECU">**MainECU**</a>:
